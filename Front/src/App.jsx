@@ -1,9 +1,10 @@
-import PageNotFound from "./page/PageNotFound";
+import Login from "./page/Login";
+// import PageNotFound from "./page/PageNotFound";
 
 export default function App() {
   return (
     <div>
-      <PageNotFound />
+      <Login />
     </div>
   );
 }
