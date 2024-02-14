@@ -1,3 +1,9 @@
+import CreateOrderForm from "../feactures/Orders/CreateOrderForm";
+
 export default function Orders() {
-  return <div>Orders</div>;
+  return (
+    <div>
+      Orders <CreateOrderForm />
+    </div>
+  );
 }
