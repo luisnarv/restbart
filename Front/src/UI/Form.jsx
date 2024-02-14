@@ -5,5 +5,6 @@ const Form = styled.form`
   background-color: #80808043;
   height: auto;
   border-radius: 5px;
+  padding: 10px;
 `;
 export default Form;
