@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const StyleNotFound = styled.div`
@@ -28,10 +29,11 @@ const Button = styled.button`
 `;
 
 export default function PageNotFound() {
+  const navigate = useNavigate();
   return (
     <StyleNotFound>
       ERROR PAGE NOT FOUND 😕
-      <Button>Go back</Button>
+      <Button onClick={() => navigate(-1)}>Go back</Button>
     </StyleNotFound>
   );
 }

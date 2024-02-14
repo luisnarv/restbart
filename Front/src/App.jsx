@@ -1,10 +1,11 @@
-import Login from "./page/Login";
-// import PageNotFound from "./page/PageNotFound";
+import { Outlet } from "react-router-dom";
+import Header from "./UI/Header";
 
 export default function App() {
   return (
-    <div>
-      <Login />
-    </div>
+    <>
+      <Header />
+      <Outlet />
+    </>
   );
 }
