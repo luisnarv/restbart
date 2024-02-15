@@ -1,3 +1,4 @@
+import InventoryRows from "../feactures/Inventory/InventoryRows";
 import Table from "./Table";
 import TableHeader from "./TableHeader";
 import TableTbody from "./TableTbody";
@@ -21,28 +22,18 @@ const inventoryData = [
   { nombre: "Agua mineral", cantidad: 50, unidad: "botellas" },
 ];
 
+const fakeHeaders = ["Nombre", "Cantidad", "Unidad"];
 export default function Inventory() {
   return (
     <div>
-      Inventory
       <h2>Inventario del Restaurante</h2>
       <Table>
-        <TableHeader>
-          <tr>
-            <Table.th>Nombre</Table.th>
-            <Table.th>Cantidad</Table.th>
-            <Table.th>Unidad</Table.th>
-          </tr>
-        </TableHeader>
-        <TableTbody>
-          {inventoryData.map((item, index) => (
-            <tr key={index}>
-              <Table.td>{item.nombre}</Table.td>
-              <Table.td>{item.cantidad}</Table.td>
-              <Table.td>{item.unidad}</Table.td>
-            </tr>
-          ))}
-        </TableTbody>
+        <TableHeader data={fakeHeaders} />
+
+        <TableTbody
+          data={inventoryData}
+          render={(item, index) => <InventoryRows item={item} index={index} />}
+        />
       </Table>
     </div>
   );

@@ -10,6 +10,7 @@ const StyleButton = styled.button`
   font-family: inherit;
   font-size: 17px;
   padding: 0.6em 1.5em;
+  cursor: pointer;
 
   &:hover {
     background-position: right center;
@@ -32,6 +33,10 @@ const StyleButton = styled.button`
     }
   }
 `;
-export default function Button({ children, onClick }) {
-  return <StyleButton onClick={onClick}>{children}</StyleButton>;
+export default function Button({ id = "", children, onClick }) {
+  return (
+    <StyleButton id={id} onClick={onClick}>
+      {children}
+    </StyleButton>
+  );
 }

@@ -2,6 +2,8 @@ import Table from "./Table";
 import TableHeader from "./TableHeader";
 import TableTbody from "./TableTbody";
 
+import OrdersRow from "../feactures/Orders/OrdersRow";
+
 const ordersData = [
   {
     cliente: "Juan Perez",
@@ -85,38 +87,26 @@ const ordersData = [
   },
 ];
 
+const fakeHeaders = [
+  "Numero de pedido",
+  "Nombre del cliente",
+  "Número de mesa",
+  "Alergias alimentarias",
+  "Detalles del pedido",
+  "Bebidas",
+  "Postre",
+  "",
+];
 export default function Orders() {
   return (
     <div>
       <Table>
-        <TableHeader>
-          <tr>
-            <Table.th></Table.th>
-            <Table.th>Numero de pedido</Table.th>
-            <Table.th>Nombre del cliente</Table.th>
-            <Table.th>Número de mesa</Table.th>
-            <Table.th>Alergias alimentarias</Table.th>
-            <Table.th>Detalles del pedido</Table.th>
-            <Table.th>Bebidas</Table.th>
-            <Table.th>Postre</Table.th>
-            <Table.th></Table.th>
-          </tr>
-        </TableHeader>
-        <TableTbody>
-          {ordersData.map((order, index) => (
-            <tr key={index}>
-              <Table.td></Table.td>
-              <Table.td>{index}</Table.td>
-              <Table.td>{order.cliente}</Table.td>
-              <Table.td>{order.mesa}</Table.td>
-              <Table.td>{order.alergias}</Table.td>
-              <Table.td>{order.pedido}</Table.td>
-              <Table.td>{order.bebida}</Table.td>
-              <Table.td>{order.postre}</Table.td>
-              <Table.td></Table.td>
-            </tr>
-          ))}
-        </TableTbody>
+        <TableHeader data={fakeHeaders} />
+
+        <TableTbody
+          data={ordersData}
+          render={(order, index) => <OrdersRow order={order} index={index} />}
+        />
       </Table>
     </div>
   );
