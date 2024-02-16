@@ -8,6 +8,7 @@ const StyleHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2%;
+  color: black;
 `;
 export default function Header() {
   return (
