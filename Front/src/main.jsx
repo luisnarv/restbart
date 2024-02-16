@@ -10,6 +10,7 @@ import Dashboard from "./page/Dashboard.jsx";
 import Inventory from "./page/Inventory.jsx";
 import Orders from "./page/Orders.jsx";
 import Users from "./page/Users.jsx";
+import HomePage from "./page/HomePage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -32,11 +33,15 @@ const router = createBrowserRouter([
         path: "users",
         element: <Users />,
       },
-      {
-        path: "*",
-        element: <PageNotFound />,
-      },
     ],
+  },
+  {
+    path: "/home",
+    element: <HomePage />,
+  },
+  {
+    path: "*",
+    element: <PageNotFound />,
   },
 ]);
 
