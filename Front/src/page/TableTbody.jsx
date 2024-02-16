@@ -10,5 +10,9 @@ const StyleTableTbody = styled.tbody`
 
 export default function TableTbody({ data, render }) {
   // if (!data.length) return <Empty>No data to show at the moment</Empty>
-  return <StyleTableTbody>{data.map(render)}</StyleTableTbody>;
+  return (
+    <>
+      <StyleTableTbody>{data.map(render)}</StyleTableTbody>
+    </>
+  );
 }

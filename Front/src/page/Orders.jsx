@@ -3,6 +3,9 @@ import TableHeader from "./TableHeader";
 import TableTbody from "./TableTbody";
 
 import OrdersRow from "../feactures/Orders/OrdersRow";
+import TableFooter from "./TableFooter";
+import Pagination from "./Pagination";
+import styled from "styled-components";
 
 const ordersData = [
   {
@@ -97,17 +100,26 @@ const fakeHeaders = [
   "Postre",
   "",
 ];
+const StyleOrders = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+`;
+
 export default function Orders() {
   return (
-    <div>
+    <StyleOrders>
       <Table>
         <TableHeader data={fakeHeaders} />
 
         <TableTbody
-          data={ordersData}
+          data={ordersData.slice(0, 5)}
           render={(order, index) => <OrdersRow order={order} index={index} />}
         />
       </Table>
-    </div>
+      <TableFooter>
+        <Pagination count={20} />
+      </TableFooter>
+    </StyleOrders>
   );
 }
