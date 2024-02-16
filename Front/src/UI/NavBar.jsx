@@ -14,12 +14,12 @@ const StyleNavLink = styled(NavLink)`
     align-items: center;
     gap: 1.2rem;
     text-decoration: none;
-
-    color: #333333;
+    text-transform: capitalize;
+    color: #dc2f24;
     font-size: 1.2rem;
     font-weight: 500;
     padding: 0.2rem 1rem;
-    transition: all 0.3s;
+    transition: all 0.4s;
   }
 
   /* This works because react-router places the active class on the active NavLink */
@@ -27,8 +27,8 @@ const StyleNavLink = styled(NavLink)`
   &:active,
   &.active:link,
   &.active:visited {
-    color: green;
-    background-color: #307a3065;
+    filter: invert(1);
+    text-decoration: overline;
     border-radius: 5px;
   }
 
