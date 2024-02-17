@@ -3,7 +3,7 @@ import NavBar from "./NavBar";
 
 const StyleHeader = styled.header`
   background-color: #ffffff;
-  padding: 10px 10%;
+  /* padding: 10px 10%; */
   display: flex;
   justify-content: space-between;
   align-items: center;
