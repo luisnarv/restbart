@@ -1,7 +1,10 @@
+import styled from "styled-components";
+import Filter from "../UI/Filter";
 import InventoryRows from "../feactures/Inventory/InventoryRows";
 import Table from "./Table";
 import TableHeader from "./TableHeader";
 import TableTbody from "./TableTbody";
+import Input from "../UI/Input";
 
 const inventoryData = [
   { nombre: "Carne de res", cantidad: 20, unidad: "kg" },
@@ -22,11 +25,35 @@ const inventoryData = [
   { nombre: "Agua mineral", cantidad: 50, unidad: "botellas" },
 ];
 
+const StyleInventory = styled.div`
+  margin: 5%;
+  align-items: center;
+`;
+
 const fakeHeaders = ["Nombre", "Cantidad", "Unidad"];
 export default function Inventory() {
   return (
-    <div>
+    <StyleInventory>
       <h2>Inventario del Restaurante</h2>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Input type="search" placeholder="Search.." />
+
+        <Filter
+          filterName="orders"
+          options={[
+            { value: "all", label: "ALL" },
+            { value: "agotado", label: "Agotado" },
+            { value: "conservado", label: "Conservado" },
+          ]}
+        />
+      </div>
+      <br />
       <Table>
         <TableHeader data={fakeHeaders} />
 
@@ -35,6 +62,6 @@ export default function Inventory() {
           render={(item, index) => <InventoryRows item={item} index={index} />}
         />
       </Table>
-    </div>
+    </StyleInventory>
   );
 }
