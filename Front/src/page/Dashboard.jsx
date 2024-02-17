@@ -1,11 +1,19 @@
 import Button from "../UI/Button";
 import Modal from "../UI/Modal";
 import CreateOrderForm from "../feactures/Orders/CreateOrderForm";
-
 import styled from "styled-components";
 
+import {
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  BarChart,
+  Legend,
+  Bar,
+} from "recharts";
+
 const StyleDashboard = styled.body`
-  margin: 5%;
   color: black;
 `;
 
@@ -24,11 +32,76 @@ const Item = styled.div`
   width: calc(30% - 20px);
 `;
 
+const Div = styled.div`
+  display: flex;
+  background-color: #eaeaea;
+  border-radius: 10px;
+  padding: 20px;
+  gap: 10px;
+`;
+
+const Element = styled.div``;
+
+const data = [
+  { month: "Enero", ventas: 3500 },
+  { month: "Febrero", ventas: 4200 },
+  { month: "Marzo", ventas: 4800 },
+  { month: "Abril", ventas: 5200 },
+  { month: "Mayo", ventas: 6000 },
+  { month: "Junio", ventas: 6800 },
+  { month: "Julio", ventas: 7100 },
+  { month: "Agosto", ventas: 6900 },
+  { month: "Septiembre", ventas: 6400 },
+  { month: "Octubre", ventas: 5800 },
+  { month: "Noviembre", ventas: 4900 },
+  { month: "Diciembre", ventas: 4100 },
+];
+
 export default function Dashboard() {
   return (
     <StyleDashboard>
       <body>
         <h1>Welcome x </h1>
+        <Div>
+          <Element>
+            <h3>📈 Ventas diarias</h3>
+            <span># 100 </span>
+          </Element>
+          <hr />
+          <Element>
+            <h3>📈 Ventas diarias</h3>
+            <span># 100 </span>
+          </Element>
+          <hr />
+          <Element>
+            <h3>📈 Ventas diarias</h3>
+            <span># 100 </span>
+          </Element>
+          <hr />
+          <Element>
+            <h3>📈 Ventas diarias</h3>
+            <span># 100 </span>
+          </Element>
+        </Div>
+        <br />
+        <div style={{ display: "flex", gap: "2%" }}>
+          <Div>
+            <BarChart width={730} height={250} data={data}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="month" />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              {/* <Bar dataKey="month" fill="#8884d8" /> */}
+              <Bar dataKey="ventas" fill="#82ca9d" />
+            </BarChart>
+            <br />
+          </Div>
+          <br />
+          <Div>
+            <h1>Add funtion</h1>
+          </Div>
+        </div>
         <Section>
           <Button>Agregar producto</Button>
 
@@ -56,7 +129,6 @@ export default function Dashboard() {
             <p>Precio unitario: $20</p>
           </Item>
         </Section>
-
         <Section>
           <h3>ventas </h3>
           <Item></Item>

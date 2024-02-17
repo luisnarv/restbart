@@ -109,6 +109,7 @@ const StyleOrders = styled.div`
 export default function Orders() {
   return (
     <StyleOrders>
+      <h1>orders</h1>
       <Table>
         <TableHeader data={fakeHeaders} />
 
@@ -118,7 +119,7 @@ export default function Orders() {
         />
       </Table>
       <TableFooter>
-        <Pagination count={20} />
+        <Pagination count={100} />
       </TableFooter>
     </StyleOrders>
   );
