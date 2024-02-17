@@ -27,6 +27,7 @@ const inventoryData = [
 
 const StyleInventory = styled.div`
   margin: 5%;
+  align-items: center;
 `;
 
 const fakeHeaders = ["Nombre", "Cantidad", "Unidad"];
