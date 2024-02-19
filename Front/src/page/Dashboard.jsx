@@ -3,44 +3,108 @@ import Modal from "../UI/Modal";
 import CreateOrderForm from "../feactures/Orders/CreateOrderForm";
 import styled from "styled-components";
 
-import {
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  BarChart,
-  Legend,
-  Bar,
-} from "recharts";
+import Stats from "../feactures/dashboard/Stats";
+import SalesChart from "../feactures/dashboard/SalesChart";
+import DashboardOrder from "../feactures/dashboard/DashboardOrder";
 
-const StyleDashboard = styled.body`
+const ordersData = [
+  {
+    cliente: "Juan Perez",
+    mesa: "5",
+    alergias: "Ninguna",
+    pedido: "Hamburguesa, sin cebolla, 2; Pizza, extra queso, 1",
+    bebida: "Cocacola",
+    postre: "Postre 1",
+  },
+  {
+    cliente: "Maria Lopez",
+    mesa: "3",
+    alergias: "Gluten",
+    pedido: "Ensalada César, sin crutones, 1; Sushi, sin wasabi, 2",
+    bebida: "Jugo natural",
+    postre: "Postre 3",
+  },
+  {
+    cliente: "Carlos Gomez",
+    mesa: "7",
+    alergias: "Lactosa",
+    pedido: "Pasta Alfredo, sin queso, 1; Ensalada mixta, 1",
+    bebida: "Agua",
+    postre: "Postre 2",
+  },
+  {
+    cliente: "Ana Martínez",
+    mesa: "2",
+    alergias: "Ninguna",
+    pedido: "Parrillada mixta, bien hecho, 1; Papas fritas, 1",
+    bebida: "Vino tinto",
+    postre: "Postre 4",
+  },
+  {
+    cliente: "Pedro Rodríguez",
+    mesa: "4",
+    alergias: "Nueces",
+    pedido: "Ensalada de frutas, sin nueces, 1; Tarta de manzana, 1",
+    bebida: "Limonada",
+    postre: "Postre 1",
+  },
+  {
+    cliente: "Laura González",
+    mesa: "8",
+    alergias: "Ninguna",
+    pedido: "Pollo asado, 1; Arroz blanco, 1",
+    bebida: "Refresco de limón",
+    postre: "Postre 3",
+  },
+  {
+    cliente: "Sofía Hernandez",
+    mesa: "6",
+    alergias: "Gluten",
+    pedido: "Pizza vegetariana, sin queso, 1; Ensalada de quinoa, 1",
+    bebida: "Agua de coco",
+    postre: "Postre 2",
+  },
+  {
+    cliente: "Luis Ramirez",
+    mesa: "1",
+    alergias: "Lactosa",
+    pedido: "Tacos al pastor, sin crema, 2; Guacamole, 1",
+    bebida: "Margarita",
+    postre: "Postre 4",
+  },
+  {
+    cliente: "Elena Castillo",
+    mesa: "9",
+    alergias: "Ninguna",
+    pedido: "Sopa de verduras, 1; Filete de salmón, 1",
+    bebida: "Té helado",
+    postre: "Postre 1",
+  },
+  {
+    cliente: "Diego Muñoz",
+    mesa: "10",
+    alergias: "Gluten",
+    pedido: "Tortilla española, sin pan, 1; Paella, sin mariscos, 1",
+    bebida: "Sangría",
+    postre: "Postre 3",
+  },
+];
+
+const fakeHeaders = [
+  "Numero de pedido",
+  "Nombre del cliente",
+  "Número de mesa",
+  "Alergias alimentarias",
+  "Detalles del pedido",
+  "Bebidas",
+  "Postre",
+  "",
+];
+/**-------------------------- */
+
+const StyleDashboard = styled.div`
   color: black;
 `;
-
-const Section = styled.section`
-  width: 100%;
-  display: flex;
-  gap: 5%;
-  margin: 40px 0px;
-`;
-
-const Item = styled.div`
-  background-color: #f4f4f4;
-  font-size: 1rem;
-  padding: 20px;
-  margin: 10px;
-  width: calc(30% - 20px);
-`;
-
-const Div = styled.div`
-  display: flex;
-  background-color: #eaeaea;
-  border-radius: 10px;
-  padding: 20px;
-  gap: 10px;
-`;
-
-const Element = styled.div``;
 
 const data = [
   { month: "Enero", ventas: 3500 },
@@ -57,83 +121,23 @@ const data = [
   { month: "Diciembre", ventas: 4100 },
 ];
 
+const Ventas = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
 export default function Dashboard() {
   return (
     <StyleDashboard>
-      <body>
-        <h1>Welcome x </h1>
-        <Div>
-          <Element>
-            <h3>📈 Ventas diarias</h3>
-            <span># 100 </span>
-          </Element>
-          <hr />
-          <Element>
-            <h3>📈 Ventas diarias</h3>
-            <span># 100 </span>
-          </Element>
-          <hr />
-          <Element>
-            <h3>📈 Ventas diarias</h3>
-            <span># 100 </span>
-          </Element>
-          <hr />
-          <Element>
-            <h3>📈 Ventas diarias</h3>
-            <span># 100 </span>
-          </Element>
-        </Div>
-        <br />
-        <div style={{ display: "flex", gap: "2%" }}>
-          <Div>
-            <BarChart width={730} height={250} data={data}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="month" />
-              <YAxis />
-              <Tooltip />
-              <Legend />
-              {/* <Bar dataKey="month" fill="#8884d8" /> */}
-              <Bar dataKey="ventas" fill="#82ca9d" />
-            </BarChart>
-            <br />
-          </Div>
-          <br />
-          <Div>
-            <h1>Add funtion</h1>
-          </Div>
-        </div>
-        <Section>
-          <Button>Agregar producto</Button>
+      <h1>Bienvenido x </h1>
 
-          <Button>Actualizar Inventario</Button>
-
-          <Button>Generar Reporte</Button>
-        </Section>
-        <Section>
-          <Item>
-            <h3>Producto 1</h3>
-            <p>Descripción: Lorem ipsum dolor sit amet</p>
-            <p>Cantidad: 50 unidades</p>
-            <p>Precio unitario: $10</p>
-          </Item>
-          <Item>
-            <h3>Producto 2</h3>
-            <p>Descripción: Consectetur adipiscing elit</p>
-            <p>Cantidad: 30 unidades</p>
-            <p>Precio unitario: $20</p>
-          </Item>
-          <Item>
-            <h3>Producto 3</h3>
-            <p>Descripción: Consectetur adipiscing elit</p>
-            <p>Cantidad: 30 unidades</p>
-            <p>Precio unitario: $20</p>
-          </Item>
-        </Section>
-        <Section>
-          <h3>ventas </h3>
-          <Item></Item>
-        </Section>
-      </body>
+      <Stats />
+      <br />
+      <Ventas>
+        <SalesChart data={data} />
+        <DashboardOrder />
+      </Ventas>
+      <br />
       <Modal>
         <Modal.Open opens="modal1">
           <Button>abrir modal</Button>
