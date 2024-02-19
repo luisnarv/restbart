@@ -12,10 +12,11 @@ import {
 } from "recharts";
 
 const StyleSalesChart = styled.div`
+  width: 40%;
   display: flex;
   background-color: #eaeaea;
   border-radius: 10px;
-  padding: 20px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
 
@@ -24,7 +25,7 @@ const StyleSalesChart = styled.div`
 export default function SalesChart({ data }) {
   return (
     <StyleSalesChart>
-      <BarChart width={930} height={350} data={data}>
+      <BarChart width={930} height={450} data={data}>
         <CartesianGrid strokeDasharray="5 3" />
         <XAxis dataKey="month" fontSize={"1rem"} />
         <YAxis fontSize={"1rem"} type="number" includeHidden />
