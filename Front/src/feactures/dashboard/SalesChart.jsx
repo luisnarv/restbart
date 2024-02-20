@@ -12,14 +12,9 @@ import {
 } from "recharts";
 
 const StyleSalesChart = styled.div`
-  width: 60%;
   display: flex;
-  background-color: #eaeaea;
+  /* background-color: #eaeaea; */
   border-radius: 10px;
-  padding: 5px;
-  justify-content: center;
-  align-items: center;
-
   box-shadow: 2px 3px 4px #00000044;
 `;
 export default function SalesChart({ data }) {

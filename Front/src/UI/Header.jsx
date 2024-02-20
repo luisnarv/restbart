@@ -1,20 +1,18 @@
 import styled from "styled-components";
-import NavBar from "./NavBar";
 
 const StyleHeader = styled.header`
   background-color: #ffffff;
-  /* padding: 10px 10%; */
   display: flex;
   justify-content: space-between;
+  padding: 2% 2% 0%;
   align-items: center;
-  margin-bottom: 2%;
   color: black;
+  background-color: #dcdcdc29;
 `;
 export default function Header() {
   return (
     <StyleHeader>
-      Logo
-      <NavBar />
+      <div>Logo</div>
     </StyleHeader>
   );
 }

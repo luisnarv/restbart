@@ -28,11 +28,6 @@ const data = [
   { month: "Diciembre", ventas: 4100 },
 ];
 
-const Ventas = styled.div`
-  display: flex;
-  gap: 1rem;
-`;
-
 export default function Dashboard() {
   return (
     <StyleDashboard>
@@ -40,10 +35,10 @@ export default function Dashboard() {
 
       <Stats />
       <br />
-      <Ventas>
-        <SalesChart data={data} />
-        <DashboardOrder />
-      </Ventas>
+      <DashboardOrder />
+
+      <br />
+      <SalesChart data={data} />
       <br />
       <Modal>
         <Modal.Open opens="modal1">

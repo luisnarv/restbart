@@ -3,7 +3,12 @@ import { NavLink } from "react-router-dom";
 
 const StyleNav = styled.nav`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 2rem;
+  grid-row: 1 / -1;
+  padding: 10% 5% 0% 5%;
+  box-shadow: -1px 6px 11px 0px #00000047;
 `;
 
 const StyleNavLink = styled(NavLink)`
@@ -21,8 +26,6 @@ const StyleNavLink = styled(NavLink)`
     padding: 0.2rem 1rem;
     transition: all 0.4s;
   }
-
-  /* This works because react-router places the active class on the active NavLink */
   &:hover,
   &:active,
   &.active:link,
