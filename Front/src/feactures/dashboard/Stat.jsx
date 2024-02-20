@@ -29,10 +29,10 @@ const Icon = styled.span`
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background-color: white;
+  background-color: ${(props) => props.color};
   grid-row: 1/-1;
   justify-content: center;
-  color: ${(props) => props.color};
+  color: white;
 `;
 
 export default function Stat({ icon, color, title, ...restProps }) {

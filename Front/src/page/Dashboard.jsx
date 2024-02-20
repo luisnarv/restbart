@@ -6,6 +6,7 @@ import styled from "styled-components";
 import Stats from "../feactures/dashboard/Stats";
 import SalesChart from "../feactures/dashboard/SalesChart";
 import DashboardOrder from "../feactures/dashboard/DashboardOrder";
+import Heading from "../UI/Heading";
 
 /**-------------------------- */
 
@@ -31,7 +32,7 @@ const data = [
 export default function Dashboard() {
   return (
     <StyleDashboard>
-      <h1>Bienvenido x </h1>
+      <Heading as="h1">Bienvenido x </Heading>
 
       <Stats />
       <br />
