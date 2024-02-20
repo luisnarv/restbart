@@ -1,17 +1,6 @@
 import styled, { css } from "styled-components";
 import Heading from "../../UI/Heading";
-
-const StyleOrders = styled.div`
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #eaeaea;
-  border-radius: 10px;
-  justify-content: center;
-  box-shadow: 2px 3px 4px #00000044;
-`;
+import HrLine from "../../UI/HrLine";
 
 const fakeOrderDataArray = [
   {
@@ -56,60 +45,57 @@ const fakeOrderDataArray = [
   },
 ];
 
+const StyleOrders = styled.div`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f6f6f6e4;
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px #00000044;
+`;
+
 const List = styled.li`
   display: flex;
   font-size: 1rem;
   margin: 5px;
 `;
-const UList = styled.ul`
-  width: 80%;
-`;
+const UList = styled.ul``;
 
 const OrderSpan = styled.span`
   text-transform: capitalize;
   font-size: 1rem;
   width: 100px;
   height: 40px;
+  border-radius: 105px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
   ${(props) =>
     props.state === "paid" &&
     css`
-      background-color: #3ed53ec3;
-      text-align: center;
-      justify-content: center;
       align-items: center;
-      display: flex;
-      color: white;
-      border-radius: 5px;
-      font-weight: 600;
+      background-color: #00fe006f;
+      color: #146b15;
+      font-weight: 700;
     `}
   ${(props) =>
     props.state === "delivered" &&
     css`
-      background-color: #047ec0c4;
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      color: white;
-      border-radius: 5px;
-      font-weight: 600;
+      background-color: #00a6ff70;
+      color: #265a76;
+      font-weight: 700;
     `}
     ${(props) =>
     props.state === "pending" &&
     css`
-      text-align: center;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      color: white;
-      background-color: #d1cb13c7;
-      border-radius: 5px;
-      font-weight: 600;
-    `};
-`;
-
-const LineStyle = styled.hr`
-  border: solid 1px #c6c6c6;
+      font-weight: 700;
+      background-color: #fff70070;
+      color: #676528;
+    `}
 `;
 
 export default function DashboardOrder() {
@@ -118,7 +104,7 @@ export default function DashboardOrder() {
       <Heading as="h2">Pedidos recientes</Heading>
       <hr />
       <UList>
-        {fakeOrderDataArray.map((order) => (
+        {fakeOrderDataArray.map((order, index) => (
           <>
             <List key={order.key}>
               <div
@@ -138,7 +124,7 @@ export default function DashboardOrder() {
               <OrderSpan>${order.total}</OrderSpan>
               <OrderSpan state={order.estado}>{order.estado}</OrderSpan>
             </List>
-            <LineStyle />
+            {index + 1 < fakeOrderDataArray.length && <HrLine />}
           </>
         ))}
       </UList>

@@ -9,7 +9,7 @@ const StyleStats = styled.div`
   width: fit-content;
   display: flex;
   flex-wrap: wrap;
-  background-color: #eaeaea;
+  background-color: #f5f5f5;
   border-radius: 10px;
   padding: 0px 20px;
   gap: 10px;
@@ -33,7 +33,7 @@ export default function Stats() {
       <Stat color="green" icon={<GiCoins />} title="Costos" value="$1000" />
       <ColumnLine />
       <Stat
-        color="blue"
+        color="#f38009"
         icon={<PiCookingPot />}
         title="Plato más vendido"
         value="Pasta Carbonara"
@@ -46,7 +46,12 @@ export default function Stats() {
         value="200"
       />
       <ColumnLine />
-      <Stat icon={<SlSocialGoogle />} title="Reseñas de Google" value="4.5" />
+      <Stat
+        icon={<SlSocialGoogle />}
+        title="Reseñas de Google"
+        color="#0f42d3"
+        value="4.5"
+      />
     </StyleStats>
   );
 }
