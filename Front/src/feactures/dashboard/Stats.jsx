@@ -4,6 +4,7 @@ import { HiOutlineChartSquareBar } from "react-icons/hi";
 import { GiCoins } from "react-icons/gi";
 import { PiCookingPot, PiUsersFourLight } from "react-icons/pi";
 import { SlSocialGoogle } from "react-icons/sl";
+import HrLine from "../../UI/HrLine";
 
 const StyleStats = styled.div`
   width: fit-content;
@@ -16,10 +17,6 @@ const StyleStats = styled.div`
   box-shadow: 2px 3px 4px #00000044;
 `;
 
-const ColumnLine = styled.hr`
-  margin: 10px;
-`;
-
 export default function Stats() {
   return (
     <StyleStats>
@@ -29,23 +26,23 @@ export default function Stats() {
         title="ventas del día"
         value="$2500"
       />
-      <ColumnLine />
+      <HrLine />
       <Stat color="green" icon={<GiCoins />} title="Costos" value="$1000" />
-      <ColumnLine />
+      <HrLine />
       <Stat
         color="#f38009"
         icon={<PiCookingPot />}
         title="Plato más vendido"
         value="Pasta Carbonara"
       />
-      <ColumnLine />
+      <HrLine />
       <Stat
         icon={<PiUsersFourLight />}
         color="brown"
         title="Clientes"
         value="200"
       />
-      <ColumnLine />
+      <HrLine />
       <Stat
         icon={<SlSocialGoogle />}
         title="Reseñas de Google"
