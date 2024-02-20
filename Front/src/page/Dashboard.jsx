@@ -12,6 +12,10 @@ import Heading from "../UI/Heading";
 
 const StyleDashboard = styled.div`
   color: black;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
 `;
 
 const data = [
