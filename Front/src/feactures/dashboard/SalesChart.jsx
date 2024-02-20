@@ -12,11 +12,11 @@ import {
 } from "recharts";
 
 const StyleSalesChart = styled.div`
-  width: 40%;
+  width: 60%;
   display: flex;
   background-color: #eaeaea;
   border-radius: 10px;
-  padding: 10px;
+  padding: 5px;
   justify-content: center;
   align-items: center;
 

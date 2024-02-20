@@ -2,14 +2,14 @@ import styled, { css } from "styled-components";
 import Heading from "../../UI/Heading";
 
 const StyleOrders = styled.div`
-  width: 60%;
+  width: 50%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background-color: #eaeaea;
   border-radius: 10px;
-  padding: 40px 40px 10px 40px;
   justify-content: center;
-  align-items: flex-start;
   box-shadow: 2px 3px 4px #00000044;
 `;
 
@@ -60,7 +60,6 @@ const List = styled.li`
   display: flex;
   font-size: 1rem;
   margin: 5px;
-  justify-content: space-around;
 `;
 const UList = styled.ul`
   width: 80%;
@@ -68,8 +67,9 @@ const UList = styled.ul`
 
 const OrderSpan = styled.span`
   text-transform: capitalize;
+  font-size: 1rem;
   width: 100px;
-  height: 50px;
+  height: 40px;
   ${(props) =>
     props.state === "paid" &&
     css`
@@ -115,7 +115,7 @@ const LineStyle = styled.hr`
 export default function DashboardOrder() {
   return (
     <StyleOrders>
-      <h2>Pedidos recientes</h2>
+      <Heading as="h2">Pedidos recientes</Heading>
       <hr />
       <UList>
         {fakeOrderDataArray.map((order) => (
@@ -125,8 +125,8 @@ export default function DashboardOrder() {
                 style={{
                   display: "flex",
                   flexDirection: "column",
-                  width: "100px",
-                  alignItems: "center",
+                  width: "150px",
+                  alignItems: "flex-start",
                 }}
               >
                 <Heading as="h5">{order.nombreUsuario}</Heading>
