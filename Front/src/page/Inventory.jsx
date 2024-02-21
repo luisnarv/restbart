@@ -26,8 +26,16 @@ const inventoryData = [
 ];
 
 const StyleInventory = styled.div`
+  display: flex;
+  flex-direction: column;
   margin: 5%;
-  align-items: center;
+`;
+
+const Content = styled.div`
+  background-color: #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 3px 4px #00000044;
 `;
 
 const fakeHeaders = ["Nombre", "Cantidad", "Unidad"];
@@ -54,14 +62,18 @@ export default function Inventory() {
         />
       </div>
       <br />
-      <Table>
-        <TableHeader data={fakeHeaders} />
+      <Content>
+        <Table>
+          <TableHeader data={fakeHeaders} />
 
-        <TableTbody
-          data={inventoryData}
-          render={(item, index) => <InventoryRows item={item} index={index} />}
-        />
-      </Table>
+          <TableTbody
+            data={inventoryData}
+            render={(item, index) => (
+              <InventoryRows item={item} index={index} />
+            )}
+          />
+        </Table>
+      </Content>
     </StyleInventory>
   );
 }

@@ -3,10 +3,10 @@ import Table from "../../page/Table";
 
 export default function InventoryRows({ item, index }) {
   return (
-    <tr key={index}>
-      <Table.td>{item.nombre}</Table.td>
-      <Table.td>{item.cantidad}</Table.td>
-      <Table.td>{item.unidad}</Table.td>
-    </tr>
+    <Table.tr key={index} color={index % 2 === 0 ? "#ffffff" : "#efefef"}>
+      <td>{item.nombre}</td>
+      <td>{item.cantidad}</td>
+      <td>{item.unidad}</td>
+    </Table.tr>
   );
 }
