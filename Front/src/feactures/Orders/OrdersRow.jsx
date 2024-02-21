@@ -7,19 +7,19 @@ import Table from "../../page/Table";
 export default function OrdersRow({ index, order }) {
   const { cliente, mesa, alergias, pedido, bebida, postre } = order;
   return (
-    <tr key={index}>
-      <Table.td>{index}</Table.td>
-      <Table.td>{cliente}</Table.td>
-      <Table.td>{mesa}</Table.td>
-      <Table.td>{alergias}</Table.td>
-      <Table.td>{pedido}</Table.td>
-      <Table.td>{bebida}</Table.td>
-      <Table.td>{postre}</Table.td>
-      <Table.td>
+    <Table.tr key={index} color={index % 2 === 0 ? "#ffffff" : "#efefef"}>
+      <td>{index}</td>
+      <td>{cliente}</td>
+      <td>{mesa}</td>
+      <td>{alergias}</td>
+      <td style={{ padding: "10px" }}>{pedido}</td>
+      <td>{bebida}</td>
+      <td>{postre}</td>
+      <td style={{ width: "100px" }}>
         <Menus>
           <Menus.Menu>
-            <Menus.Toggle id={"bookingId"} />
-            <Menus.List id={"bookingId"}>
+            <Menus.Toggle id={"OrderID"} />
+            <Menus.List id={"OrderID"}>
               <Menus.Button icon={<TbShoppingBagEdit />}>Editar</Menus.Button>
               <Menus.Button icon={<TbListDetails />}>Detalles</Menus.Button>
               <Menus.Button icon={<SiContactlesspayment />}>
@@ -28,7 +28,7 @@ export default function OrdersRow({ index, order }) {
             </Menus.List>
           </Menus.Menu>
         </Menus>
-      </Table.td>
-    </tr>
+      </td>
+    </Table.tr>
   );
 }

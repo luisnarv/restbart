@@ -1,17 +1,16 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
 
-const StyleTable = styled.table``;
-const StyleTh = styled.th`
-  padding: 10px;
+const StyleTable = styled.table`
+  border-collapse: collapse;
 `;
-const styleTd = styled.td`
+const styleTd = styled.tr`
   padding: 10px;
+  background-color: ${(props) => props.color};
 `;
 
 export default function Table({ children }) {
   return <StyleTable>{children}</StyleTable>;
 }
 
-Table.th = StyleTh;
-Table.td = styleTd;
+Table.tr = styleTd;
