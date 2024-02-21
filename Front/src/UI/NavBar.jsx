@@ -54,9 +54,9 @@ export default function NavBar() {
   return (
     <StyleNav>
       <StyleNavLink to="dashboard">dashboard</StyleNavLink>
-      <StyleNavLink to="orders">Orders</StyleNavLink>
-      <StyleNavLink to="inventory">Inventory</StyleNavLink>
-      <StyleNavLink to="users">Users</StyleNavLink>
+      <StyleNavLink to="orders">Ordenes</StyleNavLink>
+      <StyleNavLink to="inventory">Inventario</StyleNavLink>
+      <StyleNavLink to="users">Usuarios</StyleNavLink>
     </StyleNav>
   );
 }

@@ -89,11 +89,11 @@ export default function Pagination({ count = 20 }) {
   return (
     <StyledPagination>
       <P>
-        Showing <span>{(currentPage - 1) * PAGE_SIZE}</span> to{" "}
+        Mostrar de <span>{(currentPage - 1) * PAGE_SIZE}</span> a{" "}
         <span>
           {currentPage === pageCount ? count : currentPage * PAGE_SIZE}
         </span>{" "}
-        of <span>{count}</span> results
+        de <span>{count}</span> results
       </P>
       <Buttons>
         <PaginationButton disabled={currentPage === 1} onClick={prevPage}>
