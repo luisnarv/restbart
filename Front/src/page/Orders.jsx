@@ -116,7 +116,7 @@ const Content = styled.div``;
 export default function Orders() {
   return (
     <StyleOrders>
-      <Heading as="h1">Orders</Heading>
+      <Heading as="h1">Ordenes </Heading>
       <Content>
         <Table>
           <TableHeader data={fakeHeaders} />
