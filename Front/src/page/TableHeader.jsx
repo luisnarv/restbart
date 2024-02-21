@@ -5,18 +5,19 @@ import Table from "./Table";
 const StyleTableHeader = styled.thead`
   min-width: 100px;
   font-size: 1rem;
-  background: #dfdede5e;
-  border-radius: 5px;
+  background: #fac800;
 `;
 
 export default function TableHeader({ data }) {
   return (
     <StyleTableHeader>
-      <tr>
+      <Table.tr>
         {data.map((head, index) => (
-          <Table.th key={index}>{head}</Table.th>
+          <th style={{ padding: "10px" }} key={index}>
+            {head}
+          </th>
         ))}
-      </tr>
+      </Table.tr>
     </StyleTableHeader>
   );
 }

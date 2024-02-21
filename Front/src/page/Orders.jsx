@@ -6,6 +6,7 @@ import OrdersRow from "../feactures/Orders/OrdersRow";
 import TableFooter from "./TableFooter";
 import Pagination from "./Pagination";
 import styled from "styled-components";
+import Heading from "../UI/Heading";
 
 const ordersData = [
   {
@@ -91,9 +92,9 @@ const ordersData = [
 ];
 
 const fakeHeaders = [
-  "Numero de pedido",
-  "Nombre del cliente",
-  "Número de mesa",
+  "# Pedido",
+  "Cliente",
+  "# Mesa",
   "Alergias alimentarias",
   "Detalles del pedido",
   "Bebidas",
@@ -101,26 +102,37 @@ const fakeHeaders = [
   "",
 ];
 const StyleOrders = styled.div`
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
+  box-shadow: 2px 3px 4px #00000044;
+  background-color: white;
+  border-radius: 10px;
 `;
+
+const Content = styled.div``;
 
 export default function Orders() {
   return (
     <StyleOrders>
-      <h1>orders</h1>
-      <Table>
-        <TableHeader data={fakeHeaders} />
+      <Heading as="h1">Orders</Heading>
+      <Content>
+        <Table>
+          <TableHeader data={fakeHeaders} />
 
-        <TableTbody
-          data={ordersData.slice(0, 5)}
-          render={(order, index) => <OrdersRow order={order} index={index} />}
-        />
-      </Table>
-      <TableFooter>
-        <Pagination count={100} />
-      </TableFooter>
+          <TableTbody
+            data={ordersData.slice(0, 5)}
+            render={(order, index) => <OrdersRow order={order} index={index} />}
+          />
+        </Table>
+        <br />
+
+        <TableFooter>
+          <Pagination count={100} />
+        </TableFooter>
+        <br />
+      </Content>
     </StyleOrders>
   );
 }
