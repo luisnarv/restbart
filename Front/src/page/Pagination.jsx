@@ -58,8 +58,8 @@ const PaginationButton = styled.button`
   }
 
   &:hover:not(:disabled) {
-    background-color: #e3e3e399;
-    color: #282828;
+    background-color: #ececec96;
+    color: #282828bd;
   }
 `;
 
@@ -93,12 +93,12 @@ export default function Pagination({ count = 20 }) {
         <span>
           {currentPage === pageCount ? count : currentPage * PAGE_SIZE}
         </span>{" "}
-        de <span>{count}</span> results
+        de <span>{count}</span> resultados
       </P>
       <Buttons>
         <PaginationButton disabled={currentPage === 1} onClick={prevPage}>
           <HiChevronLeft />
-          <span>Previous</span>
+          <span>Anterior</span>
         </PaginationButton>
 
         <PaginationButton
@@ -106,7 +106,7 @@ export default function Pagination({ count = 20 }) {
           onClick={nextPage}
           right={true}
         >
-          <span>Next</span> <HiChevronRight />
+          <span>Siguiente</span> <HiChevronRight />
         </PaginationButton>
       </Buttons>
     </StyledPagination>
