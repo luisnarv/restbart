@@ -1,10 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lobster&display=swap");
 * {
   margin: 0px;
   padding: 0px;
 }
 
 body {
-  font-family: system-ui, "Poppins", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-family: "Josefin Sans", "Lobster", system-ui, "Poppins", sans-serif;
   min-height: 100vh;
   line-height: 1.5;
   font-size: 1.6rem;
@@ -14,5 +18,3 @@ body {
 ul {
   list-style: none;
 }
-
-/* Eliminamos la fecha que por defecto aparece en el desplegable */
