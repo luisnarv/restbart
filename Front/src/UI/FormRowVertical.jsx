@@ -4,10 +4,9 @@ import styled from "styled-components";
 
 const StyledFormRow = styled.div`
   display: flex;
-  margin: 20px;
+  margin: 20px 0px 20px 0px;
   align-items: center;
-  justify-content: center;
-
+  justify-content: space-between;
   gap: 2rem;
 `;
 

@@ -20,21 +20,21 @@ const StyledToggle = styled.button`
   transition: all 0.2s;
 
   &:hover {
-    background-color: gray;
+    background-color: #bababa5b;
   }
 
   & svg {
     width: 2.4rem;
-    height: 2.4rem;
-    color: gray;
+    height: 1.4rem;
+    color: #484848;
   }
 `;
 
 const StyledList = styled.ul`
   position: absolute;
 
-  background-color: #dbdbdbea;
-  box-shadow: 5px 2px 9px #16161633;
+  background-color: #ffffff;
+  box-shadow: 6px 4px 5px #16161652;
   border-radius: 5px;
 
   right: ${(props) => props.position.x}px;
@@ -55,13 +55,13 @@ const StyledButton = styled.button`
   gap: 1.6rem;
 
   &:hover {
-    background-color: green;
+    background-color: #e6bc14;
   }
 
   & svg {
     width: 1.6rem;
     height: 1.6rem;
-    color: green;
+    color: #e67314;
     transition: all 0.3s;
   }
 `;

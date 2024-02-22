@@ -3,20 +3,30 @@ import FormRowVertical from "../../UI/FormRowVertical";
 import Input from "../../UI/Input";
 import Textarea from "../../UI/Textarea";
 import Select from "../../UI/Select";
+import styled from "styled-components";
+import Heading from "../../UI/Heading";
+import Button from "../../UI/Button";
+
+const StyleOrderForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+`;
 
 export default function CreateOrderForm() {
   return (
-    <div>
+    <StyleOrderForm>
+      <Heading as="h2">Crear Orden</Heading>
       <Form>
         <FormRowVertical label="Nombre del cliente">
-          <Input type="text" placeholder="customer name" />
+          <Input type="text" placeholder="Nombre de cliente" />
         </FormRowVertical>
         {/*Para saber dónde entregar el pedido.*/}
         <FormRowVertical label="Número de mesa">
-          <Input type="text" placeholder="Location" />
+          <Input type="text" placeholder="# Mesa" />
         </FormRowVertical>
         <FormRowVertical label="Alergias alimentarias">
-          <Textarea placeholder="More details" />
+          <Textarea placeholder="Eje: Mani, chocolate, nueces, etc... " />
         </FormRowVertical>
 
         {/* Esto incluye el nombre del plato, las modificaciones o preferencias especiales (por ejemplo, sin cebolla, bien hecho, etc.), y la cantidad de cada plato.  */}
@@ -40,7 +50,8 @@ export default function CreateOrderForm() {
             <option>Postre 4</option>
           </Select>
         </FormRowVertical>
+        <Button>Crear</Button>
       </Form>
-    </div>
+    </StyleOrderForm>
   );
 }
