@@ -12,7 +12,7 @@ export default function OrdersRow({ index, order }) {
       <td>{cliente}</td>
       <td>{mesa}</td>
       <td>{alergias}</td>
-      <td style={{ padding: "10px" }}>{pedido}</td>
+      <td style={{ padding: "10px", width: "200px" }}>{pedido}</td>
       <td>{bebida}</td>
       <td>{postre}</td>
       <td style={{ width: "100px" }}>
