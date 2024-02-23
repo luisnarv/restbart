@@ -13,7 +13,7 @@ export default function TableOrders({ fakeHeaders, ordersData }) {
   return (
     <StyleTable>
       <Table>
-        <TableHeader data={fakeHeaders} color={"#fac800;"} />
+        <TableHeader data={fakeHeaders} color="#fac800" />
         <TableTbody
           data={ordersData.slice(0, 10)}
           render={(order, index) => <OrdersRow order={order} index={index} />}
