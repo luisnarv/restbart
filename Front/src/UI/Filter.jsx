@@ -15,6 +15,7 @@ const FilterButton = styled.button`
   background-color: #e9e9e96b;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 
   ${(props) =>
     props.active &&

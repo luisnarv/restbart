@@ -18,6 +18,7 @@ const StyledToggle = styled.button`
   border-radius: 5px;
   transform: translateX(0.8rem);
   transition: all 0.2s;
+  cursor: pointer;
 
   &:hover {
     background-color: #bababa5b;
@@ -32,7 +33,6 @@ const StyledToggle = styled.button`
 
 const StyledList = styled.ul`
   position: absolute;
-
   background-color: #ffffff;
   box-shadow: 6px 4px 5px #16161652;
   border-radius: 5px;
@@ -49,7 +49,7 @@ const StyledButton = styled.button`
   padding: 1.2rem 2.4rem;
   font-size: 1.4rem;
   transition: all 0.2s;
-
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 1.6rem;

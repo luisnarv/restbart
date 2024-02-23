@@ -60,6 +60,7 @@ const PaginationButton = styled.button`
   &:hover:not(:disabled) {
     background-color: #ececec96;
     color: #282828bd;
+    cursor: pointer;
   }
 `;
 
