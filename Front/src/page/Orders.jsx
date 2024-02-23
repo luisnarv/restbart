@@ -1,13 +1,8 @@
 import styled from "styled-components";
 
 import Heading from "../UI/Heading";
-import Table from "./Table";
-import TableHeader from "./TableHeader";
-import TableTbody from "./TableTbody";
-import TableFooter from "./TableFooter";
-import OrdersRow from "../feactures/Orders/OrdersRow";
-import Pagination from "./Pagination";
 import AddOrdersWithFilter from "../feactures/Orders/AddOrdersWithFilter";
+import TableOrders from "../feactures/Orders/TableOrders";
 
 const ordersData = [
   {
@@ -112,28 +107,13 @@ const StyleOrders = styled.div`
   border-radius: 10px;
 `;
 
-const Content = styled.div``;
-
 export default function Orders() {
   return (
     <StyleOrders>
       <Heading as="h1">Ordenes </Heading>
       <AddOrdersWithFilter />
       <br />
-      <Content>
-        <Table>
-          <TableHeader data={fakeHeaders} />
-          <TableTbody
-            data={ordersData.slice(0, 5)}
-            render={(order, index) => <OrdersRow order={order} index={index} />}
-          />
-        </Table>
-        <br />
-        <TableFooter>
-          <Pagination count={100} />
-        </TableFooter>
-        <br />
-      </Content>
+      <TableOrders fakeHeaders={fakeHeaders} ordersData={ordersData} />
     </StyleOrders>
   );
 }

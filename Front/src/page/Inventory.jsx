@@ -38,7 +38,7 @@ const Content = styled.div`
   box-shadow: 2px 3px 4px #00000044;
 `;
 
-const fakeHeaders = ["Nombre", "Cantidad", "Unidad"];
+const fakeHeaders = ["Nombre", "Cantidad", "Unidad", " "];
 export default function Inventory() {
   return (
     <StyleInventory>
@@ -69,7 +69,9 @@ export default function Inventory() {
           <TableTbody
             data={inventoryData}
             render={(item, index) => (
-              <InventoryRows item={item} index={index} />
+              <>
+                <InventoryRows item={item} index={index} />
+              </>
             )}
           />
         </Table>

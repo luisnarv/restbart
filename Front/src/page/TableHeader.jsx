@@ -5,13 +5,12 @@ import Table from "./Table";
 const StyleTableHeader = styled.thead`
   min-width: 100px;
   font-size: 1rem;
-  background: #fac800;
 `;
 
-export default function TableHeader({ data }) {
+export default function TableHeader({ data, color }) {
   return (
     <StyleTableHeader>
-      <Table.tr>
+      <Table.tr color={color}>
         {data.map((head, index) => (
           <th style={{ padding: "10px" }} key={index}>
             {head}
