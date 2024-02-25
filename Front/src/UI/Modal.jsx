@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import styled from "styled-components";
-// import { HiOutlineX } from "react-icons/hi";
+import { HiOutlineX } from "react-icons/hi";
 import { createPortal } from "react-dom";
 import { createContext } from "react";
 import { useState } from "react";
@@ -84,7 +84,9 @@ function Window({ children, name }) {
   return createPortal(
     <Overlay>
       <StyledModal ref={ref}>
-        <Button onClick={close}>{/* <HiOutlineX /> */}cerrar</Button>
+        <Button onClick={close}>
+          <HiOutlineX />
+        </Button>
         <div>{cloneElement(children, { onCloseModal: close })} </div>
       </StyledModal>
     </Overlay>,

@@ -5,6 +5,7 @@ const StyleTable = styled.table`
   border-collapse: collapse;
 `;
 const styleTd = styled.tr`
+  position: relative;
   padding: 10px;
   background-color: ${(props) => props.color};
 `;
