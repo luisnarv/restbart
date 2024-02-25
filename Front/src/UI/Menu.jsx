@@ -36,6 +36,7 @@ const StyledList = styled.ul`
   background-color: #ffffff;
   box-shadow: 6px 4px 5px #16161652;
   border-radius: 5px;
+  z-index: 3;
 
   right: ${(props) => props.position.x}px;
   top: ${(props) => props.position.y}px;
@@ -88,11 +89,10 @@ function Toggle({ id }) {
   const { openId, close, open, setPosition } = useContext(MenuContext);
   function handleClick(e) {
     e.stopPropagation();
-    const rect = e.target.closest("button").getBoundingClientRect();
 
     setPosition({
-      x: window.innerWidth - rect.width - rect.x,
-      y: rect.y + rect.height + 8,
+      x: 1,
+      y: 70,
     });
 
     openId === "" || openId !== id ? open(id) : close();
@@ -112,13 +112,17 @@ function List({ id, children }) {
   if (openId !== id) {
     return null;
   }
-  console.log(position);
-  return createPortal(
+  return (
     <StyledList ref={ref} position={position}>
       {children}
-    </StyledList>,
-    document.body
+    </StyledList>
   );
+  // return createPortal(
+  //   <StyledList ref={ref} position={position}>
+  //     {children}
+  //   </StyledList>,
+  //   document.body
+  // );
 }
 function Button({ disabled, children, icon = "", onClick }) {
   const { close } = useContext(MenuContext);
