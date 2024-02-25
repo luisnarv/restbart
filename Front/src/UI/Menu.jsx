@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
-import { createPortal } from "react-dom";
 import { HiDotsHorizontal } from "react-icons/hi";
 import styled from "styled-components";
 import { useOutsideClick } from "../Hooks/useOutsideClick";
@@ -117,17 +116,12 @@ function List({ id, children }) {
       {children}
     </StyledList>
   );
-  // return createPortal(
-  //   <StyledList ref={ref} position={position}>
-  //     {children}
-  //   </StyledList>,
-  //   document.body
-  // );
 }
 function Button({ disabled, children, icon = "", onClick }) {
   const { close } = useContext(MenuContext);
 
   function handleClick() {
+    console.log("se uso el ckick");
     onClick?.();
     close();
   }

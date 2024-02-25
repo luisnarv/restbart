@@ -3,9 +3,11 @@ import { TbShoppingBagEdit, TbListDetails } from "react-icons/tb";
 import { SiContactlesspayment } from "react-icons/si";
 import Menus from "../../UI/Menu";
 import Table from "../../page/Table";
+import { useNavigate } from "react-router-dom";
 
 export default function OrdersRow({ index, order }) {
   const { cliente, mesa, alergias, pedido, bebida, postre } = order;
+  const navigate = useNavigate();
   return (
     <Table.tr key={index} color={index % 2 === 0 ? "#ffffff" : "#efefef"}>
       <td>{index}</td>
@@ -21,7 +23,12 @@ export default function OrdersRow({ index, order }) {
             <Menus.Toggle id={"OrderID"} />
             <Menus.List id={"OrderID"}>
               <Menus.Button icon={<TbShoppingBagEdit />}>Editar</Menus.Button>
-              <Menus.Button icon={<TbListDetails />}>Detalles</Menus.Button>
+              <Menus.Button
+                onClick={() => navigate(`/detail/${cliente}`)}
+                icon={<TbListDetails />}
+              >
+                Detalles
+              </Menus.Button>
               <Menus.Button icon={<SiContactlesspayment />}>
                 Terminar pedido
               </Menus.Button>

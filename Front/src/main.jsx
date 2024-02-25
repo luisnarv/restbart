@@ -11,6 +11,7 @@ import Inventory from "./page/Inventory.jsx";
 import Orders from "./page/Orders.jsx";
 import Users from "./page/Users.jsx";
 import HomePage from "./page/HomePage.jsx";
+import DetailOrder from "./feactures/Orders/DetailOrder.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
         path: "orders",
         element: <Orders />,
       },
+      { path: "detail/:orderID", element: <DetailOrder /> },
       {
         path: "users",
         element: <Users />,
