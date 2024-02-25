@@ -17,7 +17,7 @@ export default function HomePage() {
   return (
     <div>
       <StyleBanner>
-        <h1>Bienvenido a Restaurante React</h1>
+        <h1>Bienvenido a Restaurante React DE LUIS</h1>
         <p>Disfruta de nuestra exquisita cocina y ambiente acogedor</p>
         <a href="#" className="btn">
           Ver Menú
