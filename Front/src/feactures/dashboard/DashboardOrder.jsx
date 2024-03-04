@@ -56,12 +56,16 @@ const StyleOrders = styled.div`
   box-shadow: 2px 3px 4px #00000044;
 `;
 
+const UList = styled.ul`
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+`;
 const List = styled.li`
   display: flex;
   font-size: 1rem;
   margin: 5px;
 `;
-const UList = styled.ul``;
 
 const OrderSpan = styled.span`
   text-transform: capitalize;
@@ -101,7 +105,7 @@ const OrderSpan = styled.span`
 export default function DashboardOrder() {
   return (
     <StyleOrders>
-      <Heading as="h2">Pedidos recientes</Heading>
+      <Heading as="h2"> Pedidos recientes</Heading>
       <hr />
       <UList>
         {fakeOrderDataArray.map((order, index) => (

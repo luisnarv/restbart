@@ -8,6 +8,9 @@ import SalesChart from "../feactures/dashboard/SalesChart";
 import DashboardOrder from "../feactures/dashboard/DashboardOrder";
 import Heading from "../UI/Heading";
 
+import DayChart from "../feactures/dashboard/DayChart";
+import StyledContent from "../UI/ContentFlex";
+
 /**-------------------------- */
 
 const StyleDashboard = styled.div`
@@ -40,7 +43,11 @@ export default function Dashboard() {
 
       <Stats />
       <br />
-      <DashboardOrder />
+
+      <StyledContent flex="flex">
+        <DashboardOrder />
+        <DayChart />
+      </StyledContent>
 
       <br />
       <SalesChart data={data} />
