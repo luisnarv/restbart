@@ -39,7 +39,7 @@ const dataPai = [
 export default function DayChart() {
   return (
     <StyleOrders>
-      <h3>Momentos de Mayor Demanda</h3>
+      <h3>Momentos de mayor demanda</h3>
 
       <ResponsiveContainer width="70%" height="90%">
         <LineChart
