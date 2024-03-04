@@ -5,19 +5,16 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  BarChart,
-  Legend,
-  Bar,
   Area,
   AreaChart,
-  LineChart,
-  Line,
   ResponsiveContainer,
 } from "recharts";
 
 const StyleSalesChart = styled.div`
-  /* background-color: #eaeaea; */
-  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
   height: 400px;
   border-radius: 10px;
   box-shadow: 2px 3px 4px #00000044;
@@ -36,14 +33,14 @@ export default function SalesChart({ data }) {
           }}
         >
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="month" />
-          <YAxis />
+          <XAxis dataKey="month" fontSize={"1rem"} />
+          <YAxis fontSize={"1rem"} />
           <Tooltip />
           <Area
             type="monotone"
             dataKey="ventas"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#0004ff"
+            fill="#0b6bcb85"
           />
         </AreaChart>
       </ResponsiveContainer>
