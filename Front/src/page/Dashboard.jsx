@@ -1,15 +1,10 @@
-import Button from "../UI/Button";
-import Modal from "../UI/Modal";
-import CreateOrderForm from "../feactures/Orders/CreateOrderForm";
 import styled from "styled-components";
 
 import Stats from "../feactures/dashboard/Stats";
-import SalesChart from "../feactures/dashboard/SalesChart";
 import DashboardOrder from "../feactures/dashboard/DashboardOrder";
 import Heading from "../UI/Heading";
 
-import DayChart from "../feactures/dashboard/DayChart";
-import StyledContent from "../UI/ContentFlex";
+import DashboardCharts from "../feactures/dashboard/DashboardCharts";
 
 /**-------------------------- */
 
@@ -20,44 +15,29 @@ const StyleDashboard = styled.div`
   flex-wrap: wrap;
   align-items: center;
 `;
-
-const data = [
-  { month: "Enero", ventas: 3500 },
-  { month: "Febrero", ventas: 4200 },
-  { month: "Marzo", ventas: 4800 },
-  { month: "Abril", ventas: 5200 },
-  { month: "Mayo", ventas: 6000 },
-  { month: "Junio", ventas: 6800 },
-  { month: "Julio", ventas: 7100 },
-  { month: "Agosto", ventas: 6900 },
-  { month: "Septiembre", ventas: 6400 },
-  { month: "Octubre", ventas: 5800 },
-  { month: "Noviembre", ventas: 4900 },
-  { month: "Diciembre", ventas: 4100 },
-];
+const Dashboarlayout = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10x;
+`;
 
 export default function Dashboard() {
   return (
     <StyleDashboard>
       <Heading as="h1">Bienvenido x </Heading>
 
-      <Stats />
-      <br />
-
-      <StyledContent flex="flex">
+      <Dashboarlayout>
+        <Stats />
+        <DashboardCharts />
         <DashboardOrder />
-        <DayChart />
-      </StyledContent>
 
-      <br />
-      <SalesChart data={data} />
-      <br />
-      <Modal>
-        <Modal.Open opens="modal1">
-          <Button>abrir modal</Button>
-        </Modal.Open>
-        <Modal.Window name="modal1">{<CreateOrderForm />}</Modal.Window>
-      </Modal>
+        {/* <Modal>
+          <Modal.Open opens="modal1">
+            <Button>abrir modal</Button>
+          </Modal.Open>
+          <Modal.Window name="modal1">{<CreateOrderForm />}</Modal.Window>
+        </Modal> */}
+      </Dashboarlayout>
     </StyleDashboard>
   );
 }

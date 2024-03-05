@@ -10,7 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const StyleSalesChart = styled.div`
+const StyleMonthChart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,10 +19,26 @@ const StyleSalesChart = styled.div`
   border-radius: 10px;
   box-shadow: 2px 3px 4px #00000044;
 `;
-export default function SalesChart({ data }) {
+
+const data = [
+  { month: "Enero", ventas: 3500 },
+  { month: "Febrero", ventas: 4200 },
+  { month: "Marzo", ventas: 4800 },
+  { month: "Abril", ventas: 5200 },
+  { month: "Mayo", ventas: 6000 },
+  { month: "Junio", ventas: 6800 },
+  { month: "Julio", ventas: 7100 },
+  { month: "Agosto", ventas: 6900 },
+  { month: "Septiembre", ventas: 6400 },
+  { month: "Octubre", ventas: 5800 },
+  { month: "Noviembre", ventas: 4900 },
+  { month: "Diciembre", ventas: 4100 },
+];
+
+export default function DashboardMonthChart() {
   return (
-    <StyleSalesChart>
-      <ResponsiveContainer width="100%" height="100%">
+    <StyleMonthChart>
+      <ResponsiveContainer width="90%" height="100%">
         <AreaChart
           data={data}
           margin={{
@@ -44,7 +60,7 @@ export default function SalesChart({ data }) {
           />
         </AreaChart>
       </ResponsiveContainer>
-    </StyleSalesChart>
+    </StyleMonthChart>
   );
 }
 //   return (
