@@ -14,7 +14,7 @@ const StyleMonthChart = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: 40%;
   height: 400px;
   border-radius: 10px;
   box-shadow: 2px 3px 4px #00000044;

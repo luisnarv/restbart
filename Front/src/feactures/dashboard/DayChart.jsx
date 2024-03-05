@@ -1,10 +1,11 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import styled from "styled-components";
 import { color } from "../../utils/helpers";
+import { COLORS } from "../../utils/constans";
 
 const StyleOrders = styled.div`
   width: 20%;
-  height: 500px;
+  height: auto;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -37,8 +38,6 @@ const data = [
   { name: "10 - 11 PM", ventas: 150, color: "" },
 ];
 
-const COLORS = ["#00df00", "#e0a77f", "#0fa5a5", "#fff20f", "#bbbbbb"];
-
 for (let i = 0; i < data.length; i++) {
   const porce = (data[i].ventas / 200) * 100;
 
@@ -51,8 +50,8 @@ export default function DayChart() {
     <StyleOrders>
       <h5>Horarios de mejor venta</h5>
       <hr width="100%" />
-      <ResponsiveContainer width="90%" height="50%">
-        <PieChart width={350} height={200}>
+      <ResponsiveContainer width="90%" height="55%">
+        <PieChart>
           <Pie
             data={data}
             innerRadius={60}
