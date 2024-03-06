@@ -5,8 +5,6 @@ import DashboardOrder from "../feactures/dashboard/DashboardOrder";
 import Heading from "../UI/Heading";
 
 import DashboardCharts from "../feactures/dashboard/DashboardCharts";
-import StyledContent from "../UI/ContentFlex";
-import DayChart from "../feactures/dashboard/DayChart";
 
 /**-------------------------- */
 
@@ -19,8 +17,8 @@ const StyleDashboard = styled.div`
 `;
 const Dashboarlayout = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: 10x;
 `;
 
 export default function Dashboard() {
@@ -31,10 +29,7 @@ export default function Dashboard() {
       <Dashboarlayout>
         <Stats />
         <DashboardCharts />
-        <StyledContent flex="flex">
-          <DashboardOrder />
-          <DayChart />
-        </StyledContent>
+        <DashboardOrder />
 
         {/* <Modal>
           <Modal.Open opens="modal1">

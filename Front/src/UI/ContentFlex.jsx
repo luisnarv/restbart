@@ -2,15 +2,19 @@ import styled, { css } from "styled-components";
 
 const StyledContent = styled.div`
   padding: 10px;
+  gap: 10px;
   border-radius: 5px;
-  width: 100%;
-
+  display: flex;
   ${(props) =>
-    props.flex &&
+    props.display === "flex" &&
     css`
-      display: flex;
       justify-content: space-between;
     `}
+  ${(props) =>
+    props.display === "column" &&
+    css`
+      flex-direction: column;
+    `};
 `;
 
 export default StyledContent;

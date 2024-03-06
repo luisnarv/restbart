@@ -4,22 +4,18 @@ import {
   CartesianGrid,
   Cell,
   ResponsiveContainer,
-  Tooltip,
   XAxis,
-  YAxis,
 } from "recharts";
 import styled from "styled-components";
 import { COLORS } from "../../utils/constans";
 import { color } from "../../utils/helpers";
 
 const data = [
-  { name: "10 ", ventas: 50, color: "" },
-  { name: "12 ", ventas: 120, color: "" },
-  { name: "2 ", ventas: 190, color: "" },
-  { name: "4 ", ventas: 150, color: "" },
-  { name: "6 ", ventas: 100, color: "" },
-  { name: "8 ", ventas: 190, color: "" },
-  { name: "11 ", ventas: 150, color: "" },
+  { name: "2 PM ", ventas: 190, color: "" },
+  { name: "4 PM", ventas: 150, color: "" },
+  { name: "6 PM", ventas: 100, color: "" },
+  { name: "8 PM", ventas: 190, color: "" },
+  { name: "11 PM", ventas: 150, color: "" },
 ];
 for (let i = 0; i < data.length; i++) {
   const porce = (data[i].ventas / 200) * 100;
@@ -29,41 +25,43 @@ for (let i = 0; i < data.length; i++) {
 }
 
 const StyleDaysChart = styled.div`
+  width: 40%;
+  padding: 10px;
   display: flex;
+  height: 280px;
+  gap: 10px;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-  width: 30%;
-  height: auto;
   border-radius: 10px;
+  background-color: #ffffff58;
   box-shadow: 2px 3px 4px #00000044;
 `;
 
 export default function DashboardDaysChart() {
   return (
     <StyleDaysChart>
-      <h5>Horarios de mejor venta</h5>
+      <h5>Ventas del día</h5>
       <hr width="100%" />
-      <ResponsiveContainer width="100%" height="80%">
+      <ResponsiveContainer width="90%" height="100%">
         <BarChart data={data}>
-          <CartesianGrid strokeDasharray="0 2" />
+          <CartesianGrid strokeDasharray="0 1" />
           <XAxis
             name="name"
             dataKey="name"
             fontSize={"1rem"}
             tick={{ stroke: "black", strokeWidth: 1 }}
-            tickMargin={15}
+            tickMargin={5}
             axisLine={false}
             tickLine={false}
           />
-          {/*
-          <YAxis fontSize={"1rem"} /> 
-          */}
-          {/* <Tooltip dataKey="name" offset={2} itemStyle={{ fontSize: "1rem" }} /> */}
           <Bar
             dataKey="ventas"
             fill="#a4a2a2"
-            label={{ position: "top", fontSize: 15, fontWeight: 600 }}
+            label={{
+              position: "right",
+              fontSize: 15,
+              fontWeight: 600,
+            }}
             maxBarSize={10}
             minPointSize={1}
           >
