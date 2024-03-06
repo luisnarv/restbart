@@ -1,7 +1,5 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import styled from "styled-components";
-import { color } from "../../utils/helpers";
-import { COLORS } from "../../utils/constans";
 
 const StyleOrders = styled.div`
   width: 20%;
@@ -28,22 +26,31 @@ const List = styled.li`
 `;
 
 // const data = [
+//   { name: "10 - 11 AM", ventas: 50, color: "" },
+//   { name: "12 - 1 PM", ventas: 120, color: "" },
+//   { name: "2 - 3 PM", ventas: 190, color: "" },
+//   { name: "4 - 5 PM", ventas: 150, color: "" },
+//   { name: "6 - 7 PM", ventas: 100, color: "" },
+//   { name: "8 - 9 PM", ventas: 190, color: "" },
+//   { name: "10 - 11 PM", ventas: 150, color: "" },
+// ];
+
 const data = [
-  { name: "10 - 11 AM", ventas: 50, color: "" },
-  { name: "12 - 1 PM", ventas: 120, color: "" },
-  { name: "2 - 3 PM", ventas: 190, color: "" },
-  { name: "4 - 5 PM", ventas: 150, color: "" },
-  { name: "6 - 7 PM", ventas: 100, color: "" },
-  { name: "8 - 9 PM", ventas: 190, color: "" },
-  { name: "10 - 11 PM", ventas: 150, color: "" },
+  { name: "Lunes", ventas: 2500, color: "#0428f6" },
+  { name: "Martes", ventas: 2800, color: "#f8832f" },
+  { name: "Miércoles", ventas: 3200, color: "#14cddb" },
+  { name: "Jueves", ventas: 3000, color: "#fff20f" },
+  { name: "Viernes", ventas: 3500, color: "#ec391d" },
+  { name: "Sábado", ventas: 4000, color: "#8ae8e3" },
+  { name: "Domingo", ventas: 4200, color: "#9dde25" },
 ];
 
-for (let i = 0; i < data.length; i++) {
-  const porce = (data[i].ventas / 200) * 100;
+// for (let i = 0; i < data.length; i++) {
+//   const porce = (data[i].ventas / 200) * 100;
 
-  const pColor = color(porce, COLORS);
-  data[i].color = pColor;
-}
+//   const pColor = color(porce, COLORS);
+//   data[i].color = pColor;
+// }
 
 export default function DayChart() {
   return (

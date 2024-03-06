@@ -5,6 +5,8 @@ import DashboardOrder from "../feactures/dashboard/DashboardOrder";
 import Heading from "../UI/Heading";
 
 import DashboardCharts from "../feactures/dashboard/DashboardCharts";
+import StyledContent from "../UI/ContentFlex";
+import DayChart from "../feactures/dashboard/DayChart";
 
 /**-------------------------- */
 
@@ -29,7 +31,10 @@ export default function Dashboard() {
       <Dashboarlayout>
         <Stats />
         <DashboardCharts />
-        <DashboardOrder />
+        <StyledContent flex="flex">
+          <DashboardOrder />
+          <DayChart />
+        </StyledContent>
 
         {/* <Modal>
           <Modal.Open opens="modal1">

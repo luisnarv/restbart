@@ -9,7 +9,7 @@ const StyledContent = styled.div`
     props.flex &&
     css`
       display: flex;
-      justify-content: space-evenly;
+      justify-content: space-between;
     `}
 `;
 
