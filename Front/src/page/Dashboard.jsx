@@ -17,8 +17,8 @@ const StyleDashboard = styled.div`
 `;
 const Dashboarlayout = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
-  gap: 10x;
 `;
 
 export default function Dashboard() {

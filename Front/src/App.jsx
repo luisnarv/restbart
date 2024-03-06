@@ -11,7 +11,7 @@ const StyleApp = styled.div`
 `;
 
 const Main = styled.main`
-  padding: 4rem 4.8rem 6.4rem;
+  padding: 2rem 2.8rem 2.4rem;
   background-color: #dcdcdc29;
   overflow: scroll;
 `;

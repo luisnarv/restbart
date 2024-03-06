@@ -1,13 +1,11 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from "recharts";
 import styled from "styled-components";
-import { color } from "../../utils/helpers";
-import { COLORS } from "../../utils/constans";
 
 const StyleOrders = styled.div`
-  width: 20%;
-  height: auto;
+  width: 40%;
   padding: 10px;
   display: flex;
+  height: 280px;
   flex-direction: column;
   align-items: center;
   gap: 10px;
@@ -27,36 +25,28 @@ const List = styled.li`
   padding: 1px 5px;
 `;
 
-// const data = [
 const data = [
-  { name: "10 - 11 AM", ventas: 50, color: "" },
-  { name: "12 - 1 PM", ventas: 120, color: "" },
-  { name: "2 - 3 PM", ventas: 190, color: "" },
-  { name: "4 - 5 PM", ventas: 150, color: "" },
-  { name: "6 - 7 PM", ventas: 100, color: "" },
-  { name: "8 - 9 PM", ventas: 190, color: "" },
-  { name: "10 - 11 PM", ventas: 150, color: "" },
+  { name: "Lunes", ventas: 2500, color: "#0428f6" },
+  { name: "Martes", ventas: 2800, color: "#f8832f" },
+  { name: "Miércoles", ventas: 3200, color: "#14cddb" },
+  { name: "Jueves", ventas: 3000, color: "#fff20f" },
+  { name: "Viernes", ventas: 3500, color: "#ec391d" },
+  { name: "Sábado", ventas: 4000, color: "#8ae8e3" },
+  { name: "Domingo", ventas: 4200, color: "#9dde25" },
 ];
-
-for (let i = 0; i < data.length; i++) {
-  const porce = (data[i].ventas / 200) * 100;
-
-  const pColor = color(porce, COLORS);
-  data[i].color = pColor;
-}
 
 export default function DayChart() {
   return (
     <StyleOrders>
-      <h5>Horarios de mejor venta</h5>
+      <h5>Días de mejor venta</h5>
       <hr width="100%" />
-      <ResponsiveContainer width="90%" height="55%">
+      <ResponsiveContainer width="90%" height="70%">
         <PieChart>
           <Pie
             data={data}
-            innerRadius={60}
-            outerRadius={70}
-            paddingAngle={4}
+            innerRadius={20}
+            outerRadius={50}
+            paddingAngle={10}
             dataKey="ventas"
             label
           >

@@ -1,14 +1,16 @@
 import StyledContent from "../../UI/ContentFlex";
 import DashboardDaysChart from "./DashboardDaysChart";
-import DayChart from "./DayChart";
 import DashboardMonthChart from "./DashboardMonthChart";
+import DayChart from "./DayChart";
 
 export default function DashboardCharts() {
   return (
-    <StyledContent flex="flex">
-      <DayChart />
+    <StyledContent display="flex">
       <DashboardDaysChart />
-      <DashboardMonthChart />
+      <DashboardDaysChart />
+
+      <DayChart />
+      {/* <DashboardMonthChart /> */}
     </StyledContent>
   );
 }
